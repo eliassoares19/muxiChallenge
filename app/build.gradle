@@ -4,11 +4,19 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.example.muxichallenge"
+        applicationId "com.example.myapplication"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
@@ -21,6 +29,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/INDEX.LIST'
+    }
 }
 
 dependencies {
@@ -32,4 +45,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "io.ktor:ktor-client-json:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    api "io.ktor:ktor-client-mock:$ktor_version"
+    api "io.ktor:ktor-client-mock-jvm:$ktor_version"
+    api "io.ktor:ktor-client-mock-js:$ktor_version"
+    api "io.ktor:ktor-client-mock-native:$ktor_version"
+    implementation "io.ktor:ktor-client-mock-native:$ktor_version"
+    implementation "io.ktor:ktor-client-mock-js:$ktor_version"
+    implementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-mock:$ktor_version"
+    implementation project(':sharedcode')
 }
