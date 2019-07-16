@@ -23,9 +23,18 @@ kotlin {
             api 'org.jetbrains.kotlin:kotlin-stdlib'
         }
     }
+
+    repositories {
+        mavenCentral()
+    }
+
+    mingwX64("native") {
+        binaries {
+            executable()
+        }
+    }
 }
 
-// workaround for https://youtrack.jetbrains.com/issue/KT-27170
 configurations {
     compileClasspath
 }
