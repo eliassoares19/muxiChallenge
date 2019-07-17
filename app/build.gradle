@@ -58,4 +58,8 @@ dependencies {
     implementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
     implementation "io.ktor:ktor-client-mock:$ktor_version"
     implementation project(':sharedcode')
+    implementation "io.ktor:ktor-client-android:$ktor_version"
+    implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-ios:$ktor_version"
+    implementation "io.ktor:ktor-client-json-native:$ktor_version"
 }
