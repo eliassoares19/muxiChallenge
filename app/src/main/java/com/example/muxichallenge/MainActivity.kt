@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Redirecting...", Toast.LENGTH_SHORT).show()
 
             requestUrl(url)
-            //
+            
         }
     }
 
