@@ -12,10 +12,10 @@ import kotlinx.coroutines.launch
         return client.get(urlString)
     }
 
-    fun requestUrl (urlString: String) {
+    fun requestUrl (urlString: String,json: getJson) {
         val scope = CoroutineScope(Dispatchers.Main)
         scope.launch{
-            println(fetch(urlString))
+            json.sendData(fetch(urlString))
         }
     }
 

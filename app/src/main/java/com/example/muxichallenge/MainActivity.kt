@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import muxi.challenge.api.requestUrl
+import muxi.challenge.api.Fruits
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,13 +12,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val url = "https://raw.githubusercontent.com/muxidev/desafio-android/master/fruits.json"
-
         btn_requestJson.setOnClickListener {
             Toast.makeText(this@MainActivity, "Redirecting...", Toast.LENGTH_SHORT).show()
 
-            requestUrl(url)
-            
+            //Calling function to get Json
+            var data = Fruits()
+            data.fetchData()
         }
     }
 
