@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
         return client.get(urlString)
     }
 
+    //Request URL using CoroutineScope
     fun requestUrl (urlString: String,json: getJson) {
         val scope = CoroutineScope(Dispatchers.Main)
         scope.launch{

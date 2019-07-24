@@ -15,11 +15,13 @@ class RecyclerViewAdapter(
 ): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     lateinit var onClickFruitHandle: OnClickFruitHandle
+
+    //Get the numbers of fruits
     override fun getItemCount(): Int {
         return dataList.size
     }
 
-
+    //Creates a View Holder using the layout list_item_view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(
@@ -30,14 +32,15 @@ class RecyclerViewAdapter(
         )
     }
 
+    //Set up textview with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        //Set up textview with data
         val fruit: Fruit = dataList[position]
         holder.fruitName.text=fruit.name
         holder.fruitPrice.text="$ " + fruit.price.toString()
     }
 
+    //Treats the event onClick when a fruit is clicked
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!), View.OnClickListener {
 
         override fun onClick(p0: View?) {

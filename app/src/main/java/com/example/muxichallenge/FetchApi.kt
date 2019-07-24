@@ -13,7 +13,7 @@ class FetchApi(var mainView: MainView) : getJson {
     //Endpoint to get the fruits
     private val url = "https://raw.githubusercontent.com/muxidev/desafio-android/master/fruits.json"
 
-    //Get the json
+    //Get the json and add all the fruits into an Array
     override fun sendData(json: String) {
         Log.d("teste: ",json)
         val jsonObject = JSONObject(json)
@@ -34,6 +34,7 @@ class FetchApi(var mainView: MainView) : getJson {
 
     }
 
+    //Comunicates with Api from Kotlin Native
     fun fetchData() {
         requestUrl(url, this)
 

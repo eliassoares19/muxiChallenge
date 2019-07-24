@@ -23,6 +23,7 @@ class DetailsFruitActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_fruit)
 
+        //Saving data from fruits
         val nome = intent.getStringExtra("nome")
         val price = intent.getStringExtra("price")
         val image = intent.getStringExtra("image")
