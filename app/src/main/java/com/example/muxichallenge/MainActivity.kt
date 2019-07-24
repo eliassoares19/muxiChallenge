@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(),MainView, OnClickFruitHandle{
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("main" , "oncreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -42,4 +43,24 @@ class MainActivity : AppCompatActivity(),MainView, OnClickFruitHandle{
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("main" , "onRestart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("main" , "onResume")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("main" , "onDestroy")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("main" , "onStop")
+    }
 }

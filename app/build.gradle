@@ -33,15 +33,15 @@ android {
         exclude 'META-INF/io.netty.versions.properties'
         exclude 'META-INF/INDEX.LIST'
     }
-    flavorDimensions 'regular','demo' //here we define dimensions
+    flavorDimensions 'regular' //here we define dimensions
     productFlavors {
-        regular {
+        paid {
             dimension 'regular'
         }
-        demo {
-            dimension 'demo'
-            applicationIdSuffix = ".demo"
-            versionNameSuffix = "-demo"
+        free {
+            dimension 'regular'
+            applicationIdSuffix = ".free"
+            versionNameSuffix = "-free"
         }
     }
 }
